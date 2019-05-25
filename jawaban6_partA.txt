@@ -1,0 +1,2 @@
+SELECT `users`.`name` AS `name_programmer`, COUNT(*) AS `jumlah_skill` from `users` left join `skills` on 
+`users`.`id`=`skills`.`user_id` GROUP BY `users`.`id`
