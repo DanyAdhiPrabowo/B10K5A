@@ -1,2 +1,8 @@
 SELECT `users`.`name` AS `name_programmer`, COUNT(*) AS `jumlah_skill` from `users` left join `skills` on 
 `users`.`id`=`skills`.`user_id` GROUP BY `users`.`id`
+
+
+SELECT `pokemons`.`id`, `pokemons`.`number`, `pokemons`.`name`, GROUP_CONCAT(`types`.`nameType` separator ',') as types FROM `pokemons`
+LEFT JOIN `typespokemon` on pokemons.id = typespokemon.idPokemon
+LEFT JOIN types on typespokemon.idType = types.idType
+GROUP BY `pokemons`.`number` ASC
